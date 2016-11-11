@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="es"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>Página principal</title>
+	<link href="./css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/home.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/font-awsome.min.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+ 
+	<h:panelGroup class="content">
+		<h:panelGroup class="dcha">
+              <h4>  <p:commandButton value="Salir"  class="btn-danger" action="login?faces-redirect=true"/></h4> 
+         </h:panelGroup>
+	</h:panelGroup>
+	<h:form class="login-block">
+
+		<h:panelGroup class="logo">
+
+			<h1><p:outputLabel>eLAGUN</p:outputLabel></h1>
+
+	</h:panelGroup>
+
+
+	<h:panelGroup class="wrapper">
+		<h:panelGroup class="container">
+   
+                 <h2>  <h:link value= "Administrar usuarios" outcome="adminUsuario"/></h2> 
+                 <br/>
+                 <h2>  <h:link value= "Administrar preguntas" outcome="adminPreguntas"/></h2> 
+                 <br/>
+                 <h2>  <h:link value= "Ver resultados" outcome="resultadosUsuario"/></h2> 
+  
+   </h:panelGroup>
+    </h:panelGroup>
+
+	</h:form>
+</h:body>
+</html>
+    

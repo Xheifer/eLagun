@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="es"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>Nueva pregunta</title>
+	<link href="./css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/home.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+<h:form class="login-block">
+	<h2>Registro de una nueva pregunta</h2>
+	
+
+		<h:panelGroup class="container">
+		<p:outputLabel>Indique el código del paciente al que quiere que afecte esta pregunta</p:outputLabel>
+		<p:inputText id="cic" class="form-control" value= "#{userBean.idPaciente}" placeholder= "Código del paciente"/>
+		<br/>
+		<p:outputLabel>¿Quiere hacer esta pregunta al paciente o a sus familiares?</p:outputLabel>
+		<br/>
+		<p:selectOneRadio id="tipoUsuario"  value="#{userBean.tipo}" styleClass="menu" panelStyleClass="panel">
+		     <f:selectItem itemLabel="Paciente" itemValue="paciente" />
+		     <f:selectItem itemLabel="Familiar" itemValue="familiar" />
+		</p:selectOneRadio>
+		<p:outputLabel>Indique aquí el texto de la pregunta:</p:outputLabel>
+		<br/>
+		<p:inputTextarea id="pregunta" class="form-control" value= "#{userBean.textoPregunta}"/>
+		<br/>	
+		<p:commandButton value="Guardar" class="btn btn-success" action="#{userBean.registrarPregunta}"/>
+		</h:panelGroup>
+	</h:form>
+	
+</h:body>
+</html>
+    

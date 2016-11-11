@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">
+    jdbc:mysql://localhost:3306/elagun</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">eside</property>
+    <property name="hibernate.connection.pool_size">10</property>
+    <property name="show_sql">true</property>
+    
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+       <!-- Disable the second-level cache  -->
+    <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+     
+     <mapping class="eLagun.Familiar"/> 
+     <mapping class="eLagun.Paciente"/> 
+     <mapping class="eLagun.PreguntaFamiliar"/>
+     <mapping class="eLagun.PreguntaPaciente"/>
+     <mapping class="eLagun.Respuesta"/>
+     <mapping class="eLagun.Resultado"/>  
+     <mapping class="eLagun.Medico"/> 
+     <mapping class="eLagun.HibernateUtil"/>   
+    
+   </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="es"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>Preguntas</title>
+	<link href="./css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+<h:form class="form-home">
+<h1 class="title">Listado completo de preguntas</h1>
+
+		<p:outputLabel>¿Quiere añadir una nueva pregunta a la lista? </p:outputLabel>
+		<p:commandButton value="Aceptar" class="btn btn-success" action="registroPregunta?faces-redirect=true"></p:commandButton>
+		<br/>
+		<br/>
+		<p:outputLabel>¿Quiere ver las preguntas de un usuario específico? Indique el código del paciente:</p:outputLabel>
+
+		<p:inputText id="cic" class="form-control" placeholder= "Código del paciente" value= "#{userBean.idPaciente}" />
+		<p:commandButton value="Consultar" class="btn btn-success" action= "#{userBean.redirigirPreguntas()}">
+			<f:param name="action" value="#{userBean.idPaciente}" />
+		</p:commandButton>
+
+
+	<h:panelGroup class="container">
+		<h3><p:outputLabel>Preguntas para pacientes </p:outputLabel></h3>
+			<p:dataTable var="preguntaPaciente" value="#{userBean.consultarPreguntasPaciente()}" styleClass="header-amarilla">
+	    		<p:column headerText="Código del paciente" style="width:15%">
+	        	<h:outputText value="#{preguntaPaciente.getPaciente().idPaciente}" />
+	    		</p:column>
+	    		<p:column headerText="Pregunta" style="width:70%">
+	        	<h:outputText value="#{preguntaPaciente.textoPregunta}" />
+	    		</p:column>
+	    		<p:column headerText="Ver preguntas de este paciente" style="width:15%">
+         			<p:commandButton value="Ver" action= "#{userBean.redirigirPreguntaPaciente()}">
+                		<f:setPropertyActionListener value="#{preguntaPaciente}" target="#{userBean.preguntaPacienteSeleccionada}" />
+            		</p:commandButton>
+ 				</p:column>
+			</p:dataTable>
+		<h3><p:outputLabel>Preguntas para familiares </p:outputLabel></h3>
+			<p:dataTable var="preguntaFamiliar" value="#{userBean.consultarPreguntasFamiliar()}" styleClass="header-amarilla">
+	    		<p:column headerText="Código del paciente" style="width:15%">
+	        	<h:outputText value="#{preguntaFamiliar.getFamiliar().getPaciente().idPaciente}" />
+	    		</p:column>
+	    		<p:column headerText="Pregunta" style="width:70%">
+	        	<h:outputText value="#{preguntaFamiliar.textoPregunta}" />
+	    		</p:column>
+	    		<p:column headerText="Ver preguntas de este paciente" style="width:15%">
+         			<p:commandButton value="Ver" action= "#{userBean.redirigirPreguntaFamiliar()}">
+                		<f:setPropertyActionListener value="#{preguntaFamiliar}" target="#{userBean.preguntaFamiliarSeleccionada}" />
+            		</p:commandButton>
+ 				</p:column>
+			</p:dataTable>
+			<br/>
+		
+		
+		<p:commandButton value="Volver a la página principal" class="btn btn-success" action="home?faces-redirect=true">
+		 
+		</p:commandButton>
+
+		</h:panelGroup>
+	</h:form>
+	
+</h:body>
+</html>
+        

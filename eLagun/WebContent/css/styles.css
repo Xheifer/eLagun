@@ -1,0 +1,354 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+
+@prim: #53e3a6;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+
+	font-weight: 300;
+	padding: 20px 5%;
+	background: url(../images/hospi.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	
+	::-webkit-input-placeholder { /* WebKit browsers */
+		font-family: 'Source Sans Pro', sans-serif;
+			color:    white;
+		font-weight: 300;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		font-family: 'Source Sans Pro', sans-serif;
+		 color:    white;
+		 opacity:  1;
+		font-weight: 300;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+		font-family: 'Source Sans Pro', sans-serif;
+		 color:    white;
+		 opacity:  1;
+		font-weight: 300;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+		font-family: 'Source Sans Pro', sans-serif;
+		 color:    white;
+		font-weight: 300;
+	}
+}
+
+
+
+
+form header {
+  margin: 0 0 20px 0;
+   text-align: center; 
+}
+form header div {
+  font-size: 90%;
+  color: #999;
+}
+form header h2 {
+  margin: 0 0 5px 0;
+}
+form > div {
+  clear: both;
+  overflow: hidden;
+  padding: 1px;
+  margin: 0 0 10px 0;
+}
+.red{
+   background-color:#F5A9A9;
+   background-image:none;
+}
+form > div > fieldset > div > div {
+  margin: 0 0 5px 0;
+}
+form > div > label,
+legend {
+	width: 25%;
+  float: left;
+  padding-right: 10px;
+}
+form > div > div,
+form > div > fieldset > div {
+  width: 75%;
+  float: right;
+}
+form > div > fieldset label {
+	font-size: 90%;
+}
+fieldset {
+	border: 0;
+  padding: 0;
+}
+h1.title {
+	font-weight: bold;
+  display: table;
+  margin: auto;
+  color: #0B3B24;
+  border-color: #0B3B0B;
+  padding: 5px 8px;
+  letter-spacing: -.025em;
+} 
+.form-signin {
+  max-width: 500px;
+  padding: 15px;
+  margin: 0 auto;
+    text-align: center;
+}
+.form-home {
+max-width: 90%;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(239, 239, 239, 0.7) ;
+}
+.form-home .salir {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.form-home .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  width: 40%;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.ui-datatable.header-amarilla th {
+    background-color: #ACE679;
+}
+
+.obligetory-rounded {
+	 top: 20px;
+	color: #0A2A12;
+  letter-spacing: .5em;
+  text-decoration: center;
+  padding: 0.75em 1.25em 0.75em 1.75em;
+  border-color: #0A2A12;
+  border-width: 3px;
+  border-style: solid;
+  white-space: nowrap;
+  -webkit-transition: border-color 500ms ease, color 250ms ease;
+  -moz-transition: border-color 500ms ease, color 250ms ease;
+  -ms-transition: border-color 500ms ease, color 250ms ease;
+  -o-transition: border-color 500ms ease, color 250ms ease;
+  transition: border-color 500ms ease, color 250ms ease;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+}
+a {
+  text-decoration: none;
+  color: #0A2A12;
+  overflow: hidden;
+  display: block;
+  margin: 0.75em;
+}
+
+.pagewrap {
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+}
+header {
+	height: 100px;
+	padding: 0 15px;
+}
+.content {
+	width: 290px;
+	float: left;
+	padding: 5px 15px;
+}
+
+.middle {
+	width: 305px; /* Account for margins + border values */
+	float: left;
+	padding: 5px 15px;
+	margin: 0px 5px 5px 5px;
+}
+
+.sidebar {
+	width: 305px;
+	padding: 5px 15px;
+	float: left;
+}
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+	
+	.pagewrap {
+		width: 100%;
+	}
+	.content {
+		width: 41%;
+		padding: 1% 4%;
+	}
+	.middle {
+		width: 70%;
+		padding: 1% 4%;
+		margin: 0px 0px 5px 5px;
+		float: right;
+	}
+	
+	.sidebar {
+		clear: both;
+		padding: 1% 4%;
+		width: auto;
+		float: none;
+	}
+
+	header {
+		padding: 1% 4%;
+	}
+}
+
+/* for 700px or less */
+@media screen and (max-width: 600px) {
+
+	.content {
+		width: auto;
+		float: none;
+	}
+	
+	.middle {
+		width: auto;
+		float: none;
+		margin-left: 0px;
+	}
+	
+	.sidebar {
+		width: auto;
+		float: none;
+	}
+
+}
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+	header {
+		height: auto;
+	}
+	h1 {
+		font-size: 2em;
+	}
+
+
+}
+
+
+
+
+
+@-webkit-keyframes square {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-700px) rotate(600deg); }
+}
+@keyframes square {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-700px) rotate(600deg); }
+}
+#content {
+	background: #f8f8f8;
+}
+#sidebar {
+	background: #f0efef;
+}
+header, #content, #middle, #sidebar {
+	margin-bottom: 5px;
+}
+
+#pagewrap, header, #content, #middle, #sidebar, footer {
+	border: solid 1px #ccc;
+}
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+textarea {
+	width: 100%;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password] {
+  width: 50%;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea:focus {
+  outline: 0;
+  border-color: #4697e4;
+}
+
+@media (max-width: 600px) {
+  form > div {
+    margin: 0 0 15px 0; 
+  }
+  form > div > label,
+  legend {
+	  width: 100%;
+    float: none;
+    margin: 0 0 5px 0;
+  }
+  form > div > div,
+  form > div > fieldset > div {
+    width: 100%;
+    float: none;
+  }
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  textarea,
+  select {
+    width: 100%; 
+  }
+}
+@media (min-width: 1200px) {
+  form > div > label,
+	legend {
+  	text-align: right;
+  }
+}
+.dcha {
+  font-family: futura;
+  color: #0A2A12;
+  text-align: right;
+}
+.izda {
+  font-family: futura;
+  color: #0A2A12;
+  text-align: left;
+  width: 20%;
+}
+.bloque{
+ width: 90%;
+ padding: 20px;
+margin: 0 auto;
+  text-align: left;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="es"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>Adminstración de los usuarios de eLagun</title>
+	<link href="./css/bootstrap.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/styles.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+<h:form class="form-home">
+	<h1 class="title">Usuarios eLagun</h1>
+
+
+	<br/>
+		<p:outputLabel>¿Quiere añadir un nuevo usuario?</p:outputLabel>
+			<p:commandButton value="Añadir" class="btn btn-success" action="registroUsuario?faces-redirect=true"/>
+			<br/>
+
+
+
+	<h:panelGroup class="container">
+		<h3><p:outputLabel>Pacientes </p:outputLabel></h3>
+			<p:dataTable var="paciente" value="#{userBean.listaPacientes()}" styleClass="header-amarilla">
+	    		<p:column headerText="Código del paciente" style="width:10%" >
+	        	<h:outputText value="#{paciente.idPaciente}" />
+	    		</p:column>
+	    		<p:column headerText="Tests saltados" style="width:10%" >
+	        	<h:outputText value="#{paciente.testsSaltados}" />
+	    		</p:column>
+	    		<p:column headerText="Email (usuario)" style="width:40%" >
+	        	<h:outputText value="#{paciente.user}" />
+	    		</p:column>
+	    		<p:column headerText="Fecha del siguiente test" style="width:15%" >
+	        	<h:outputText value="#{paciente.fechaSiguiente}" />
+	    		</p:column>
+	    		<p:column style="width:10%">
+         			<p:commandButton value="Borrar" action= "#{userBean.borrarPaciente}">
+                		<f:setPropertyActionListener value="#{paciente}" target="#{userBean.pacienteSeleccionado}" />
+            		</p:commandButton>
+ 				</p:column>
+ 				<p:column headerText="Ver preguntas de este paciente" style="width:15%">
+         			<p:commandButton value="Ver" action= "#{userBean.redirigirPaciente()}">
+                		<f:setPropertyActionListener value="#{paciente}" target="#{userBean.pacienteSeleccionado}" />
+            		</p:commandButton>
+ 				</p:column>
+			</p:dataTable>
+			<br/>
+			<br/>
+			<h3><p:outputLabel>Sus familiares </p:outputLabel></h3>
+			<p:dataTable var="familiar" value="#{userBean.listaFamiliares()}" styleClass="header-amarilla">
+	    		<p:column headerText="Código del paciente relacionado" style="width:15%">
+	        	<h:outputText value="#{familiar.getPaciente().idPaciente}" />
+	    		</p:column>
+	    		<p:column headerText="Email (usuario)" style="width:40%">
+	        	<h:outputText value="#{familiar.user}" />
+	    		</p:column>
+	    		<p:column headerText="Fecha del siguiente test" style="width:20%">
+	        	<h:outputText value="#{familiar.fechaSiguiente}" />
+	    		</p:column>
+	    		<p:column style="width:10%">
+         			<p:commandButton value="Borrar" action= "#{userBean.borrarFamiliar}">
+                		<f:setPropertyActionListener value="#{familiar}" target="#{userBean.familiarSeleccionado}" />
+            		</p:commandButton>
+ 				</p:column>
+ 				<p:column headerText="Ver preguntas de este paciente" style="width:15%">
+         			<p:commandButton value="Ver" action= "#{userBean.redirigirFamiliar()}">
+                		<f:setPropertyActionListener value="#{preguntaFamiliar}" target="#{userBean.familiarSeleccionado}" />
+            		</p:commandButton>
+ 				</p:column>
+			</p:dataTable>
+
+		</h:panelGroup>
+
+		
+		<h:panelGroup sclass="dcha">
+					<br/>	
+		<p:commandButton value="Volver atrás" class="btn btn-success" action="home?faces-redirect=true">
+		
+		</p:commandButton>
+		</h:panelGroup>
+</h:form>
+</h:body>
+</html>
+    
