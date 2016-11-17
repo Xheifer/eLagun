@@ -54,8 +54,7 @@ public class Paciente {
 	@Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE,
         org.hibernate.annotations.CascadeType.DELETE,
         org.hibernate.annotations.CascadeType.MERGE,
-        org.hibernate.annotations.CascadeType.PERSIST,
-        org.hibernate.annotations.CascadeType.DELETE_ORPHAN})
+        org.hibernate.annotations.CascadeType.PERSIST})
 	private Set<Resultado> resultados = new HashSet<Resultado>(0);
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, mappedBy = "paciente")
